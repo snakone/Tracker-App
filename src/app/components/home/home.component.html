@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row animated slideInLeft faster">
+    <div class="col s12 m12 l8">
+      <div class="map">
+          <agm-map [latitude]="lat" [longitude]="lng" [zoom]="10">
+            <agm-marker *ngFor="let user of users | async" 
+              [latitude]="user.lat" [longitude]="user.lng"></agm-marker>
+          </agm-map>
+      </div>
+    </div>
+
+    <div class="col s12 m12 l4">
+      <mat-list class="list" role="list">
+        <mat-list-item (click)="followUser(user)"
+                        *ngFor="let user of users | async"
+                        class="btn blue lighten-5">{{user.name}} 
+          <mat-icon class="taxi"
+                    [ngClass]="{'animated infinite swing red-taxi' : following === user.code}">
+                    local_taxi
+          </mat-icon>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</div>
+

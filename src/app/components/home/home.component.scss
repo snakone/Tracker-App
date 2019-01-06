@@ -1,0 +1,57 @@
+agm-map {
+    padding: 20px;
+    margin-top: 35px;
+    height: 350px;
+    border-radius: 3px;
+}
+
+/deep/ .mat-list-item .mat-list-item-content {
+  justify-content: center!important;
+}
+
+.list {
+    margin-top: 10px;
+    max-height: 230px;
+    overflow-y: scroll;
+
+    -ms-overflow-style: none;  // IE 10+
+    overflow: -moz-scrollbars-none;  // Firefox
+    
+    & mat-list-item {
+      margin: 6px auto;
+    }
+
+    & mat-list-item:hover {
+        .taxi {
+            filter: brightness(1.2);
+        }
+      }
+}
+
+.taxi {
+    margin-left: 10px;
+    position: relative;
+    top:-2px;
+    color: orange;
+}
+
+.red-taxi {
+    color:red;
+}
+
+@media (max-width: 600px) {
+
+    .list {
+        margin-top: 0;
+    }
+
+    agm-map {
+        height: 300px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
